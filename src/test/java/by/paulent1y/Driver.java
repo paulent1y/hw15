@@ -7,7 +7,7 @@ public class Driver {
     private static WebDriver driver;
 
     public static void init() {
-        System.setProperty("webdriver.chrome.driver", "src/test/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         driver = new ChromeDriver();
     }
 
@@ -20,7 +20,6 @@ public class Driver {
 
     public static void closeDriver() {
         if (driver != null) {
-            driver.close();
             driver.quit();
             driver = null;
         }
