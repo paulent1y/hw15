@@ -1,4 +1,4 @@
-package by.paulent1y;
+package by.paulent1y.utility;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

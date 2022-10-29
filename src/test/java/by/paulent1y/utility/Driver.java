@@ -1,4 +1,4 @@
-package by.paulent1y;
+package by.paulent1y.utility;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

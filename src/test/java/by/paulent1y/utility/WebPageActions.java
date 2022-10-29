@@ -1,6 +1,8 @@
-package by.paulent1y;
+package by.paulent1y.utility;
 
+import by.paulent1y.utility.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -12,13 +14,15 @@ import java.util.List;
 public class WebPageActions {
 
     public static void openUrl(String url) {
-        Driver.getDriver().get(url);
         Driver.getDriver().manage().window().maximize();
+        Driver.getDriver().get(url);
     }
 
     public static void clickElement(By locator) {
-        waitForElement(locator);
-        Driver.getDriver().findElement(locator).click();
+        WebElement element = waitForElement(locator);
+        ((JavascriptExecutor) Driver.getDriver())
+                .executeScript("arguments[0].scrollIntoView({block: \"center\", inline: \"center\"});", element);
+        element.click();
     }
 
     public static void clickOneOf(By locator1, By locator2){
@@ -35,13 +39,17 @@ public class WebPageActions {
         Driver.getDriver().findElement(locator).sendKeys(text);
     }
 
-    public static void waitForElement(By locator, int maxDuration) {
-        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(maxDuration))
+    public static WebElement waitForElement(By locator, int maxDuration) {
+        return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(maxDuration))
                 .until(ExpectedConditions.elementToBeClickable(locator));
     }
 
-    public static void waitForElement(By locator) {
-        waitForElement(locator, 5);
+    public static WebElement waitForElement(By locator) {
+        return waitForElement(locator, 5);
+    }
+
+    public static void waitForHide(By locator) {
+        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.invisibilityOf (Driver.getDriver().findElement(locator)));
     }
 
     public static void selectValueFrom(By locator, String value){
@@ -59,7 +67,12 @@ public class WebPageActions {
     }
 
     public static boolean elementExists(By locator) {
-        waitForElement(locator);
+        try {
+            waitForElement(locator, 1);
+        }
+        catch (Exception ignored){
+
+        }
         return (Driver.getDriver().findElements(locator).size()>0);
     }
 
