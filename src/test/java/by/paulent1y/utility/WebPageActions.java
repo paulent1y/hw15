@@ -68,7 +68,7 @@ public class WebPageActions {
 
     public static boolean elementExists(By locator) {
         try {
-            waitForElement(locator, 1);
+            waitForElement(locator);
         }
         catch (Exception ignored){
 

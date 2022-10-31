@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1f7799f-5670-4158-974b-456e651ea264" name="Changes" comment="2 rdy">
+    <list default="true" id="f1f7799f-5670-4158-974b-456e651ea264" name="Changes" comment="hw 9 done, two more to go">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/CartOrderingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/CartOrderingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/ProductComparisonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/ProductComparisonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/RegistrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/RegistrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/WebPageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/WebPageActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/CartOrderingTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/LoginTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/ProductComparisonTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/RegistrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/TestSuite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,16 +51,19 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\projects\java\hw13\src\test\resources" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="by.paulent1y" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="by.paulent1y" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoginTest">
+  <component name="RunManager" selected="JUnit.TestSuite">
     <configuration name="CartOrderingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw13" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="by.paulent1y.utility.*" />
+          <option name="PATTERN" value="by.paulent1y.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -93,7 +93,7 @@
       <module name="hw13" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="by.paulent1y.utility.*" />
+          <option name="PATTERN" value="by.paulent1y.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,7 +108,7 @@
       <module name="hw13" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="by.paulent1y.utility.*" />
+          <option name="PATTERN" value="by.paulent1y.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,7 +120,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegistrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw13" />
       <extension name="coverage">
         <pattern>
@@ -129,7 +129,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="by.paulent1y" />
-      <option name="MAIN_CLASS_NAME" value="by.paulent1y.RegistrationTest" />
+      <option name="MAIN_CLASS_NAME" value="by.paulent1y.TestSuite" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -137,8 +137,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestSuite" />
         <item itemvalue="JUnit.LoginTest" />
-        <item itemvalue="JUnit.RegistrationTest" />
         <item itemvalue="JUnit.ProductComparisonTest" />
         <item itemvalue="JUnit.CartOrderingTest" />
         <item itemvalue="JUnit.ProductComparisonTest.comparisonTest" />
@@ -175,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666970386114</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="hw 9 done, two more to go">
+      <created>1667007199228</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667007199229</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,7 +199,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
     <MESSAGE value="2 rdy" />
-    <option name="LAST_COMMIT_MESSAGE" value="2 rdy" />
+    <MESSAGE value="hw 9 done, two more to go" />
+    <option name="LAST_COMMIT_MESSAGE" value="hw 9 done, two more to go" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
