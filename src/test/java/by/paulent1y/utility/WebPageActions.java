@@ -25,10 +25,6 @@ public class WebPageActions {
         element.click();
     }
 
-    public static void clickNthElement(By locator){
-
-    }
-
     public static void clickOneOf(By locator1, By locator2){
         if (elementExists(locator1)) {
             clickElement(locator1);
@@ -38,18 +34,10 @@ public class WebPageActions {
         }
         else throw new RuntimeException("There is no " + locator1 + " either " + locator2 + " element" );
     }
+
     public static void typeToElement(By locator, String text) {
         waitForElement(locator);
         Driver.getDriver().findElement(locator).sendKeys(text);
-    }
-
-    public static WebElement waitForElement(By locator, int maxDuration) {
-        return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(maxDuration))
-                .until(ExpectedConditions.elementToBeClickable(locator));
-    }
-
-    public static WebElement waitForElement(By locator) {
-        return waitForElement(locator, 5);
     }
 
     public static void waitForHide(By locator) {
@@ -60,14 +48,8 @@ public class WebPageActions {
         new Select(Driver.getDriver().findElement(locator)).selectByValue(value);
     }
 
-    public static List<WebElement> waitForElements(By locator) {
-        List<WebElement> l = Driver.getDriver().findElements(locator);
-        return l;
-    }
-
-    public static String getTextFromElement(By locator){
-        waitForElement(locator);
-        return Driver.getDriver().findElement(locator).getText();
+    public static void closePage(){
+        Driver.closeDriver();
     }
 
     public static boolean elementExists(By locator) {
@@ -80,7 +62,22 @@ public class WebPageActions {
         return (Driver.getDriver().findElements(locator).size()>0);
     }
 
-    public static void closePage(){
-        Driver.closeDriver();
+    public static WebElement waitForElement(By locator, int maxDuration) {
+        return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(maxDuration))
+                .until(ExpectedConditions.elementToBeClickable(locator));
+    }
+
+    public static WebElement waitForElement(By locator) {
+        return waitForElement(locator, 5);
+    }
+
+    public static List<WebElement> waitForElements(By locator) {
+        List<WebElement> l = Driver.getDriver().findElements(locator);
+        return l;
+    }
+
+    public static String getTextFromElement(By locator){
+        waitForElement(locator);
+        return Driver.getDriver().findElement(locator).getText();
     }
 }

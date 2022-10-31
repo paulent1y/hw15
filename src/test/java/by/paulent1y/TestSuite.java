@@ -3,6 +3,8 @@ package by.paulent1y;
 import by.paulent1y.utility.Driver;
 import by.paulent1y.utility.Util;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -32,12 +34,13 @@ public class TestSuite {
         clickElement(By.xpath("//*[@id=\"c-privacy-policy__checkbox\"]"));
         clickElement(By.xpath("//*[@id=\"registerButton\"]"));
 
+        //если регистрация удачная - появляется кнопка логаута, по ней ассерт
         Assertions.assertTrue(elementExists(By.xpath("//*[@class=\"c-header__profile_link c-header__profile-logout\"]")));
         Util.saveCredsToFile(mail, password);
     }
 
     @DisplayName("Product comparison test")
-    //сайт как то рандомно(или нет) включает одну из версий. Тест костыльно работает с обеими версиями (тыкает одну из двух кнопок)
+    //сайт как то рандомно(или нет) включает одну из версий отображения. Тест костыльно работает с обеими версиями (тыкает одну из двух кнопок)
     @RepeatedTest(1)
     public void comparisonTest(){
         openUrl("https://www.euro.com.pl/telefony-komorkowe,_Samsung,d6.bhtml");
@@ -64,9 +67,10 @@ public class TestSuite {
         clickElement(By.xpath("//nav[@class=\"navigation\"]/ul/li[3]"));
         clickElement(By.xpath("//dl[@id=\"narrow-by-list2\"]/dd/ol/li[1]/a"));
 
-        //тут одноразовое использование, чтобы случайную покупку из списка выбрать, не вижу смысла в класс выносить
+        //тут одноразовое использование, чтобы случайную покупку из списка выбрать
         List<WebElement> products = Driver.getDriver().findElements(By.xpath("//li[@class=\"item product product-item\"]"));
         products.get(new Random().nextInt(products.size())).click();
+
         clickElement(By.xpath("//div[@class=\"swatch-option text\"][1]"));
         clickElement(By.xpath("//div[@class=\"swatch-option color\"][1]"));
         clickElement(By.xpath("//*[@id=\"product-addtocart-button\"]"));
@@ -99,6 +103,7 @@ public class TestSuite {
     @DisplayName("Normal login test")
     @Test
     public void loginTest(){
+        //из ранее сгенерированных данных в файле берутся логин и пароль
         String[] s = Util.getCredsFromFile().split(",");
         String mail = s[0];
         String pass = s[1];
@@ -107,6 +112,8 @@ public class TestSuite {
         typeToElement(By.xpath("//*[@id=\"Email\"]"), mail);
         typeToElement(By.xpath("//*[@id=\"Password\"]"), pass);
         clickElement(By.xpath("//*[@id=\"loginButton\"]"));
+
+        //проверяет наличие кнопки логаута
         Assertions.assertTrue(elementExists(By.xpath("//*[@class=\"c-header__profile_link c-header__profile-logout\"]")));
     }
 
@@ -114,34 +121,43 @@ public class TestSuite {
     @Test
     public void actions1Test(){
         openUrl("https://www.way2automation.com/way2auto_jquery/droppable.php");
-        Driver.getDriver().switchTo().frame(waitForElement(By.xpath("//*[@id=\"example-1-tab-1\"]/div/iframe")));
-        Actions builder = new Actions(Driver.getDriver());
 
-        builder.
-                dragAndDrop(
+        //переключение на фрейм с приколюхами
+        Driver.getDriver().switchTo().frame(waitForElement(By.xpath("//*[@id=\"example-1-tab-1\"]/div/iframe")));
+
+        //перетаскивание элемента с помощью Actions
+        Actions builder = new Actions(Driver.getDriver());
+        builder.dragAndDrop(
                         waitForElement(By.xpath("//div[@id=\"draggable\"]")),
                         waitForElement(By.xpath("//div[@id=\"droppable\"]"))).
                 perform();
-        Assertions.assertEquals("Dropped!", waitForElement(By.xpath("//div[@id=\"droppable\"]")).getText());
+
+        //когда элемент перетащен в область, текст сообщает об этом, по нему и ассерт
+        Assertions.assertEquals("Dropped!", getTextFromElement(By.xpath("//div[@id=\"droppable\"]")));
     }
 
 
     @DisplayName("Click&Hold test")
-    @Test
-    public void actions2test(){
+    @ParameterizedTest
+    @CsvSource({"50,50", "100,250", "300,0", "0,200"})
+    public void actions2test(int xOffset, int yOffset){
         openUrl("https://www.way2automation.com/way2auto_jquery/resizable.php#load_box");
-//        clickElement(By.xpath("//a[@href=\"#example-1-tab-2\"]"));
+        //тоже фрейм
         Driver.getDriver().switchTo().frame(waitForElement(By.xpath("//*[@id=\"example-1-tab-1\"]/div/iframe")));
-        Actions builder = new Actions(Driver.getDriver());
+
+        //уголок для перетаскивания
         WebElement corner = waitForElement(By.xpath("//div[@class=\"ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se\"]"));
-        int xoffset = 200, yoffset = 134;
+
+        Actions builder = new Actions(Driver.getDriver());
         builder.
                 clickAndHold(corner).
-                moveByOffset(xoffset, yoffset).
+                moveByOffset(xOffset, yOffset).
                 release().
                 perform();
-        Assertions.assertEquals(waitForElement(By.xpath("//*[@id=\"resizable\"]")).getCssValue("width"),Integer.toString(150+xoffset)+"px");
-        Assertions.assertEquals(waitForElement(By.xpath("//*[@id=\"resizable\"]")).getCssValue("height"),Integer.toString(150+yoffset)+"px");
+
+        //сравнение размеров
+        Assertions.assertEquals(waitForElement(By.xpath("//*[@id=\"resizable\"]")).getCssValue("width"),Integer.toString(150+xOffset)+"px");
+        Assertions.assertEquals(waitForElement(By.xpath("//*[@id=\"resizable\"]")).getCssValue("height"),Integer.toString(150+yOffset)+"px");
     }
 
 
