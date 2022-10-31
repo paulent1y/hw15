@@ -5,6 +5,7 @@ import by.paulent1y.utility.Util;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 import java.util.Random;
@@ -34,7 +35,6 @@ public class TestSuite {
         Assertions.assertTrue(elementExists(By.xpath("//*[@class=\"c-header__profile_link c-header__profile-logout\"]")));
         Util.saveCredsToFile(mail, password);
     }
-
 
     @DisplayName("Product comparison test")
     //сайт как то рандомно(или нет) включает одну из версий. Тест костыльно работает с обеими версиями (тыкает одну из двух кнопок)
@@ -109,6 +109,41 @@ public class TestSuite {
         clickElement(By.xpath("//*[@id=\"loginButton\"]"));
         Assertions.assertTrue(elementExists(By.xpath("//*[@class=\"c-header__profile_link c-header__profile-logout\"]")));
     }
+
+    @DisplayName("Drag&Drop test")
+    @Test
+    public void actions1Test(){
+        openUrl("https://www.way2automation.com/way2auto_jquery/droppable.php");
+        Driver.getDriver().switchTo().frame(waitForElement(By.xpath("//*[@id=\"example-1-tab-1\"]/div/iframe")));
+        Actions builder = new Actions(Driver.getDriver());
+
+        builder.
+                dragAndDrop(
+                        waitForElement(By.xpath("//div[@id=\"draggable\"]")),
+                        waitForElement(By.xpath("//div[@id=\"droppable\"]"))).
+                perform();
+        Assertions.assertEquals("Dropped!", waitForElement(By.xpath("//div[@id=\"droppable\"]")).getText());
+    }
+
+
+    @DisplayName("Click&Hold test")
+    @Test
+    public void actions2test(){
+        openUrl("https://www.way2automation.com/way2auto_jquery/resizable.php#load_box");
+//        clickElement(By.xpath("//a[@href=\"#example-1-tab-2\"]"));
+        Driver.getDriver().switchTo().frame(waitForElement(By.xpath("//*[@id=\"example-1-tab-1\"]/div/iframe")));
+        Actions builder = new Actions(Driver.getDriver());
+        WebElement corner = waitForElement(By.xpath("//div[@class=\"ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se\"]"));
+        int xoffset = 200, yoffset = 134;
+        builder.
+                clickAndHold(corner).
+                moveByOffset(xoffset, yoffset).
+                release().
+                perform();
+        Assertions.assertEquals(waitForElement(By.xpath("//*[@id=\"resizable\"]")).getCssValue("width"),Integer.toString(150+xoffset)+"px");
+        Assertions.assertEquals(waitForElement(By.xpath("//*[@id=\"resizable\"]")).getCssValue("height"),Integer.toString(150+yoffset)+"px");
+    }
+
 
     @AfterEach
     public void closeResources(){

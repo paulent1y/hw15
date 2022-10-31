@@ -25,6 +25,10 @@ public class WebPageActions {
         element.click();
     }
 
+    public static void clickNthElement(By locator){
+
+    }
+
     public static void clickOneOf(By locator1, By locator2){
         if (elementExists(locator1)) {
             clickElement(locator1);

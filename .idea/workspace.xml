@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f1f7799f-5670-4158-974b-456e651ea264" name="Changes" comment="hw 9 done, two more to go">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/CartOrderingTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/LoginTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/ProductComparisonTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/RegistrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/TestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/HW9Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/TestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/TestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/WebPageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/WebPageActions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,21 +58,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.TestSuite">
-    <configuration name="CartOrderingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hw13" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="by.paulent1y.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="by.paulent1y" />
-      <option name="MAIN_CLASS_NAME" value="by.paulent1y.CartOrderingTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw13" />
       <extension name="coverage">
@@ -104,7 +88,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductComparisonTest.comparisonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Temp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw13" />
       <extension name="coverage">
         <pattern>
@@ -113,9 +97,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="by.paulent1y" />
-      <option name="MAIN_CLASS_NAME" value="by.paulent1y.ProductComparisonTest" />
-      <option name="METHOD_NAME" value="comparisonTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="by.paulent1y.Temp" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -135,13 +118,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestSuite.formsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hw13" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by.paulent1y.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="by.paulent1y" />
+      <option name="MAIN_CLASS_NAME" value="by.paulent1y.TestSuite" />
+      <option name="METHOD_NAME" value="formsTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestSuite" />
+        <item itemvalue="JUnit.Temp" />
+        <item itemvalue="JUnit.TestSuite.formsTest" />
         <item itemvalue="JUnit.LoginTest" />
         <item itemvalue="JUnit.ProductComparisonTest" />
-        <item itemvalue="JUnit.CartOrderingTest" />
-        <item itemvalue="JUnit.ProductComparisonTest.comparisonTest" />
       </list>
     </recent_temporary>
   </component>
@@ -182,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667007199229</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="hw 9 done, two more to go">
+      <created>1667227890869</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667227890869</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
