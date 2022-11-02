@@ -1,165 +1,83 @@
 package by.paulent1y;
 
-import by.paulent1y.utility.Driver;
-import by.paulent1y.utility.Util;
+import by.paulent1y.pages.ComparisonPage;
+import by.paulent1y.pages.DemoWebsite.DragAndDropPage;
+import by.paulent1y.pages.DemoWebsite.ResizePage;
+import by.paulent1y.pages.LoginPage;
+import by.paulent1y.pages.OrderingPage;
+import by.paulent1y.pages.RegistrationPage;
+
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
-import java.util.List;
-import java.util.Random;
 
 import static by.paulent1y.utility.WebPageActions.*;
 
 public class TestSuite {
+
+    //сделал основные страницы с полями через By, потому что логика через них уже прописана в WebPageActions,
+    //дополнительные страницы поделал через @FindBy, и там уже Actions которые работают напрямую с WebElement
+    //работает в принципе и тот и тот приятно, хотел попробовать разные способы
+    //осознаю что по-хорошему для цельного проекта нужно взять что то одно
+
     @DisplayName("Normal registration test")
     @Test
     public void registrationNormalTest(){
-        String password = Util.generatePassword();
-        String mail = Util.generateEmail();
-        openUrl("https://malkite.bg/en/");
-        clickElement(By.xpath("//*[@class=\"c-header__profile_link c-header__profile-register\"]"));
-        selectValueFrom(By.xpath("//*[@id=\"CustomerBillingCountry\"]"),"176");
-        typeToElement(By.xpath("//*[@id=\"CustomerEmail\"]"), mail);
-        typeToElement(By.xpath("//*[@id=\"CustomerPassword\"]"), password);
-        typeToElement(By.xpath("//*[@id=\"CustomerPasswordConfirm\"]"), password);
-        typeToElement(By.xpath("//*[@id=\"CustomerBillingFirstName\"]"), "Marco");
-        typeToElement(By.xpath("//*[@id=\"CustomerBillingLastName\"]"), "Polo");
-        typeToElement(By.xpath("//*[@id=\"CustomerBillingPhone\"]"), "+1239450493");
-        typeToElement(By.xpath("//*[@id=\"CustomerBillingCity\"]"), "London");
-        typeToElement(By.xpath("//*[@name=\"CustomerBillingAddress1\"]"), "Baker St. 221b");
-        clickElement(By.xpath("//*[@id=\"c-privacy-policy__checkbox\"]"));
-        clickElement(By.xpath("//*[@id=\"registerButton\"]"));
-
-        //если регистрация удачная - появляется кнопка логаута, по ней ассерт
-        Assertions.assertTrue(elementExists(By.xpath("//*[@class=\"c-header__profile_link c-header__profile-logout\"]")));
-        Util.saveCredsToFile(mail, password);
+        RegistrationPage page = new RegistrationPage();
+        page.fillData();
+        page.submitRegistration();
+        Assertions.assertTrue(page.isRegistrationSuccessful());
     }
 
     @DisplayName("Product comparison test")
-    //сайт как то рандомно(или нет) включает одну из версий отображения. Тест костыльно работает с обеими версиями (тыкает одну из двух кнопок)
     @RepeatedTest(1)
     public void comparisonTest(){
-        openUrl("https://www.euro.com.pl/telefony-komorkowe,_Samsung,d6.bhtml");
-        clickElement(By.xpath("//button[@id=\"onetrust-accept-btn-handler\"]"));
-
-        //берет просто телефон с верхушки из категории самсунгов
-        clickOneOf(By.xpath("(//div[@class=\"product-community\"])[1]/ul/li/a"),
-                By.xpath("(//div[@class=\"box-medium__content\"])[1]/div/a"));
-        //потом из сяоми
-        openUrl("https://www.euro.com.pl/telefony-komorkowe,_xiaomi,d6.bhtml");
-        clickOneOf(By.xpath("(//div[@class=\"product-community\"])[1]/ul/li/a"),
-                By.xpath("(//div[@class=\"box-medium__content\"])[1]/div/a/span"));
-
-        clickOneOf(By.xpath("//div[@id=\"compare-products\"]/a[1]"),
-                By.xpath("//div[@class=\"comparison-footer-widget__gradient\"]"));
-        //тыкает "сравнить", проверяет что на странице есть блок сравнения моделей
-        Assertions.assertTrue(elementExists(By.xpath("//div[@id=\"compare-view\"]")) || elementExists(By.xpath("//*[@class=\"comparison-layer\"]")));
+        ComparisonPage page = new ComparisonPage();
+        page.addToComparison();
+        page.switchToSecondProduct();
+        page.addToComparison();
+        page.compare();
+        Assertions.assertTrue(page.isCompared());
     }
 
     @DisplayName("Product ordering")
     @Test
     public void itemOrderingTest(){
-        openUrl("https://magento.softwaretestingboard.com");
-        clickElement(By.xpath("//nav[@class=\"navigation\"]/ul/li[3]"));
-        clickElement(By.xpath("//dl[@id=\"narrow-by-list2\"]/dd/ol/li[1]/a"));
-
-        //тут одноразовое использование, чтобы случайную покупку из списка выбрать
-        List<WebElement> products = Driver.getDriver().findElements(By.xpath("//li[@class=\"item product product-item\"]"));
-        products.get(new Random().nextInt(products.size())).click();
-
-        clickElement(By.xpath("//div[@class=\"swatch-option text\"][1]"));
-        clickElement(By.xpath("//div[@class=\"swatch-option color\"][1]"));
-        clickElement(By.xpath("//*[@id=\"product-addtocart-button\"]"));
-        clickElement(By.xpath("//*[text()=\"shopping cart\"]"));
-        clickElement(By.xpath("//span[text()=\"Proceed to Checkout\"]"));
-        waitForElement(By.xpath("//*[@id=\"tooltip\"]"), 15);
-
-        //тут ajax загружается, если без манипуляций с jsexecutor, то оптимально получается подождать пока лоадер пропадет
-        waitForHide(By.xpath("//div[@id=\"checkout-loader\"]"));
-        selectValueFrom(By.xpath("//*[@name=\"country_id\"]"), "US");
-        selectValueFrom(By.xpath("//*[@name=\"region_id\"]"), "1");
-        typeToElement(By.xpath("//input[@id=\"customer-email\"]"), Util.generateEmail());
-        typeToElement(By.xpath("//input[@name=\"firstname\"]"),"Marco");
-        typeToElement(By.xpath("//input[@name=\"lastname\"]"),"Polo");
-        typeToElement(By.xpath("//input[@name=\"street[0]\"]"),"Baker st.");
-        typeToElement(By.xpath("//input[@name=\"city\"]"),"London");
-        typeToElement(By.xpath("//input[@name=\"postcode\"]"),"12345-6789");
-        typeToElement(By.xpath("//input[@name=\"telephone\"]"),"+1239450229");
-        clickElement(By.xpath("//div[@id=\"checkout-shipping-method-load\"]/table/tbody/tr"));
-        clickElement(By.xpath("//div[@id=\"shipping-method-buttons-container\"]/div"));
-        //опять ajax
-        waitForHide(By.xpath("//div[@class=\"loading-mask\"]"));
-        waitForElement(By.xpath("//span[text()=\"Apply Discount Code\"]"), 15);
-        clickElement(By.xpath("//*[text()=\"Place Order\"]"));
-
-        Assertions.assertTrue(elementExists(By.xpath("//div[@class=\"checkout-success\"]")));
-        closePage();
+        OrderingPage page = new OrderingPage();
+        page.clickRandomItem();
+        page.chooseOptions();
+        page.addToCartAndProceed();
+        page.fillOrderingData();
+        page.confirmOrder();
+        Assertions.assertTrue(page.isOrderedSuccessful());
     }
 
     @DisplayName("Normal login test")
     @Test
     public void loginTest(){
-        //из ранее сгенерированных данных в файле берутся логин и пароль
-        String[] s = Util.getCredsFromFile().split(",");
-        String mail = s[0];
-        String pass = s[1];
-        openUrl("https://malkite.bg/en/");
-        clickElement(By.xpath("//*[@class=\"c-header__profile_link c-header__profile-login\"]"));
-        typeToElement(By.xpath("//*[@id=\"Email\"]"), mail);
-        typeToElement(By.xpath("//*[@id=\"Password\"]"), pass);
-        clickElement(By.xpath("//*[@id=\"loginButton\"]"));
-
-        //проверяет наличие кнопки логаута
-        Assertions.assertTrue(elementExists(By.xpath("//*[@class=\"c-header__profile_link c-header__profile-logout\"]")));
+        LoginPage page = new LoginPage();
+        page.fillAndSubmit();
+        Assertions.assertTrue(page.isLogged());
     }
 
     @DisplayName("Drag&Drop test")
     @Test
     public void actions1Test(){
-        openUrl("https://www.way2automation.com/way2auto_jquery/droppable.php");
-
-        //переключение на фрейм с приколюхами
-        Driver.getDriver().switchTo().frame(waitForElement(By.xpath("//*[@id=\"example-1-tab-1\"]/div/iframe")));
-
-        //перетаскивание элемента с помощью Actions
-        Actions builder = new Actions(Driver.getDriver());
-        builder.dragAndDrop(
-                        waitForElement(By.xpath("//div[@id=\"draggable\"]")),
-                        waitForElement(By.xpath("//div[@id=\"droppable\"]"))).
-                perform();
-
-        //когда элемент перетащен в область, текст сообщает об этом, по нему и ассерт
-        Assertions.assertEquals("Dropped!", getTextFromElement(By.xpath("//div[@id=\"droppable\"]")));
+        DragAndDropPage page = new DragAndDropPage();
+        page.dragToDropSpot();
+        Assertions.assertEquals("Dropped!", page.getDroppableText());
     }
-
 
     @DisplayName("Click&Hold test")
     @ParameterizedTest
     @CsvSource({"50,50", "100,250", "300,0", "0,200"})
     public void actions2test(int xOffset, int yOffset){
-        openUrl("https://www.way2automation.com/way2auto_jquery/resizable.php#load_box");
-        //тоже фрейм
-        Driver.getDriver().switchTo().frame(waitForElement(By.xpath("//*[@id=\"example-1-tab-1\"]/div/iframe")));
-
-        //уголок для перетаскивания
-        WebElement corner = waitForElement(By.xpath("//div[@class=\"ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se\"]"));
-
-        Actions builder = new Actions(Driver.getDriver());
-        builder.
-                clickAndHold(corner).
-                moveByOffset(xOffset, yOffset).
-                release().
-                perform();
-
-        //сравнение размеров
-        Assertions.assertEquals(waitForElement(By.xpath("//*[@id=\"resizable\"]")).getCssValue("width"),Integer.toString(150+xOffset)+"px");
-        Assertions.assertEquals(waitForElement(By.xpath("//*[@id=\"resizable\"]")).getCssValue("height"),Integer.toString(150+yOffset)+"px");
+        ResizePage page = new ResizePage();
+        page.resizeElemement(xOffset, yOffset);
+        Assertions.assertEquals(page.getElementWidth(),Integer.toString(150+xOffset)+"px");
+        Assertions.assertEquals(page.getElementHeight(),Integer.toString(150+yOffset)+"px");
     }
-
 
     @AfterEach
     public void closeResources(){

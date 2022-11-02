@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1f7799f-5670-4158-974b-456e651ea264" name="Changes" comment="fixes">
+      <change afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/ComparisonPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/DemoWebsite/DragAndDropPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/DemoWebsite/ResizePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/LoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/OrderingPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/RegistrationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/creds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/creds.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/TestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/TestSuite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/WebPageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/WebPageActions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +48,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -55,37 +62,7 @@
       <recent name="by.paulent1y" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestSuite.actions2test">
-    <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hw13" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="by.paulent1y.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="by.paulent1y" />
-      <option name="MAIN_CLASS_NAME" value="by.paulent1y.LoginTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Temp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hw13" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="by.paulent1y.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="by.paulent1y" />
-      <option name="MAIN_CLASS_NAME" value="by.paulent1y.Temp" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestSuite">
     <configuration name="TestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw13" />
       <extension name="coverage">
@@ -101,7 +78,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSuite.actions2test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSuite.comparisonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw13" />
       <extension name="coverage">
         <pattern>
@@ -111,13 +88,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="by.paulent1y" />
       <option name="MAIN_CLASS_NAME" value="by.paulent1y.TestSuite" />
-      <option name="METHOD_NAME" value="actions2test(int,int)" />
+      <option name="METHOD_NAME" value="comparisonTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSuite.formsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSuite.itemOrderingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw13" />
       <extension name="coverage">
         <pattern>
@@ -127,7 +104,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="by.paulent1y" />
       <option name="MAIN_CLASS_NAME" value="by.paulent1y.TestSuite" />
-      <option name="METHOD_NAME" value="formsTest" />
+      <option name="METHOD_NAME" value="itemOrderingTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSuite.loginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hw13" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by.paulent1y.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="by.paulent1y" />
+      <option name="MAIN_CLASS_NAME" value="by.paulent1y.TestSuite" />
+      <option name="METHOD_NAME" value="loginTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSuite.registrationNormalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hw13" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by.paulent1y.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="by.paulent1y" />
+      <option name="MAIN_CLASS_NAME" value="by.paulent1y.TestSuite" />
+      <option name="METHOD_NAME" value="registrationNormalTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -135,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestSuite.actions2test" />
         <item itemvalue="JUnit.TestSuite" />
-        <item itemvalue="JUnit.Temp" />
-        <item itemvalue="JUnit.TestSuite.formsTest" />
-        <item itemvalue="JUnit.LoginTest" />
+        <item itemvalue="JUnit.TestSuite.loginTest" />
+        <item itemvalue="JUnit.TestSuite.registrationNormalTest" />
+        <item itemvalue="JUnit.TestSuite.comparisonTest" />
+        <item itemvalue="JUnit.TestSuite.itemOrderingTest" />
       </list>
     </recent_temporary>
   </component>
