@@ -7,6 +7,7 @@ import by.paulent1y.pages.LoginPage;
 import by.paulent1y.pages.OrderingPage;
 import by.paulent1y.pages.RegistrationPage;
 
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -21,8 +22,10 @@ public class TestSuite {
     //работает в принципе и тот и тот приятно, хотел попробовать разные способы
     //осознаю что по-хорошему для цельного проекта нужно взять что то одно
 
+
     @DisplayName("Normal registration test")
     @Test
+    @Step
     public void registrationNormalTest(){
         RegistrationPage page = new RegistrationPage();
         page.fillData();

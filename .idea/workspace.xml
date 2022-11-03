@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1f7799f-5670-4158-974b-456e651ea264" name="Changes" comment="fixes">
-      <change afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/ComparisonPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/DemoWebsite/DragAndDropPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/DemoWebsite/ResizePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/OrderingPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/RegistrationPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/creds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/creds.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/TestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/TestSuite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,20 +34,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/projects/java/hw13/src/test/resources&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "F:/projects/java/hw15/target/site",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\projects\java\hw15\target\site" />
       <recent name="F:\projects\java\hw13\src\test\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -62,7 +58,7 @@
       <recent name="by.paulent1y" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestSuite">
+  <component name="RunManager" selected="JUnit.TestSuite.registrationNormalTest">
     <configuration name="TestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw13" />
       <extension name="coverage">
@@ -144,9 +140,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestSuite.registrationNormalTest" />
         <item itemvalue="JUnit.TestSuite" />
         <item itemvalue="JUnit.TestSuite.loginTest" />
-        <item itemvalue="JUnit.TestSuite.registrationNormalTest" />
         <item itemvalue="JUnit.TestSuite.comparisonTest" />
         <item itemvalue="JUnit.TestSuite.itemOrderingTest" />
       </list>
