@@ -7,11 +7,19 @@ import by.paulent1y.pages.LoginPage;
 import by.paulent1y.pages.OrderingPage;
 import by.paulent1y.pages.RegistrationPage;
 
+import by.paulent1y.utility.Driver;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.logging.LogType;
 
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.util.List;
 
 import static by.paulent1y.utility.WebPageActions.*;
 
@@ -22,6 +30,9 @@ public class TestSuite {
     //работает в принципе и тот и тот приятно, хотел попробовать разные способы
     //осознаю что по-хорошему для цельного проекта нужно взять что то одно
 
+    //allure serve вызывается через терминал, открывает красивый репорт с шагами и описанием
+    //но через меню мавен вызывать не получается, и найти причину пока не получилось
+    //браузерные логи пишутся в target/logs.txt
 
     @DisplayName("Normal registration test")
     @Test
@@ -88,9 +99,19 @@ public class TestSuite {
     }
 
     @AfterEach
-    public void closeResources(){
+    public void tearDown() {
+        LogEntries browserLogs = Driver.getDriver().manage().logs().get(LogType.BROWSER);
+        List<LogEntry> allLogRows = browserLogs.getAll();
+        if (allLogRows.size() > 0 ) {
+            allLogRows.forEach(l-> {
+                try (BufferedWriter bw = new BufferedWriter(new FileWriter("target/logs.txt", true))) {
+                    bw.append(l.getMessage());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+        }
         closePage();
     }
-
 
 }

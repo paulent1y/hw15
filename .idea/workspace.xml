@@ -4,23 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1f7799f-5670-4158-974b-456e651ea264" name="Changes" comment="f">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/allure.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/aspectj-1.9.6.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f1f7799f-5670-4158-974b-456e651ea264" name="Changes" comment="allure reports done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/creds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/creds.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/TestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/TestSuite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/ComparisonPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/ComparisonPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/DemoWebsite/DragAndDropPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/DemoWebsite/DragAndDropPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/DemoWebsite/ResizePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/DemoWebsite/ResizePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/OrderingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/OrderingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/RegistrationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/RegistrationPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/WebPageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/WebPageActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/creds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/creds.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +61,7 @@
       <recent name="by.paulent1y" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestSuite">
+  <component name="RunManager" selected="JUnit.TestSuite.actions2test">
     <configuration name="TestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw13" />
       <extension name="coverage">
@@ -156,8 +143,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestSuite" />
         <item itemvalue="JUnit.TestSuite.actions2test" />
+        <item itemvalue="JUnit.TestSuite" />
         <item itemvalue="JUnit.TestSuite.actions1Test" />
         <item itemvalue="JUnit.TestSuite.registrationNormalTest" />
         <item itemvalue="JUnit.TestSuite.loginTest" />
@@ -222,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667437009293</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="allure reports done">
+      <created>1667646075831</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1667646075831</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,7 +236,8 @@
     <MESSAGE value="hw 9 done, two more to go" />
     <MESSAGE value="fixes" />
     <MESSAGE value="f" />
-    <option name="LAST_COMMIT_MESSAGE" value="f" />
+    <MESSAGE value="allure reports done" />
+    <option name="LAST_COMMIT_MESSAGE" value="allure reports done" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
