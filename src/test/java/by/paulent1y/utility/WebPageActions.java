@@ -68,7 +68,7 @@ public class WebPageActions {
     }
 
     public static WebElement waitForElement(By locator) {
-        return waitForElement(locator, 5);
+        return waitForElement(locator, 3);
     }
 
     public static List<WebElement> waitForElements(By locator) {

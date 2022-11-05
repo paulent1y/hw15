@@ -4,11 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1f7799f-5670-4158-974b-456e651ea264" name="Changes" comment="fixes">
+    <list default="true" id="f1f7799f-5670-4158-974b-456e651ea264" name="Changes" comment="f">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/allure.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/aspectj-1.9.6.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/creds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/creds.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/creds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/creds.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/TestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/TestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/ComparisonPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/ComparisonPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/DemoWebsite/DragAndDropPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/DemoWebsite/DragAndDropPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/DemoWebsite/ResizePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/DemoWebsite/ResizePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/OrderingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/OrderingPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/RegistrationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/pages/RegistrationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/WebPageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/paulent1y/utility/WebPageActions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,22 +46,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "F:/projects/java/hw15/target/site",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.editor"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/projects/java/hw15/target/site&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\projects\java\hw15\target\site" />
       <recent name="F:\projects\java\hw13\src\test\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\projects\java\hw15\target" />
+      <recent name="F:\projects\java\hw15\src\test\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="by.paulent1y" />
@@ -58,7 +74,7 @@
       <recent name="by.paulent1y" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestSuite.registrationNormalTest">
+  <component name="RunManager" selected="JUnit.TestSuite">
     <configuration name="TestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw13" />
       <extension name="coverage">
@@ -74,7 +90,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSuite.comparisonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSuite.actions1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw13" />
       <extension name="coverage">
         <pattern>
@@ -84,13 +100,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="by.paulent1y" />
       <option name="MAIN_CLASS_NAME" value="by.paulent1y.TestSuite" />
-      <option name="METHOD_NAME" value="comparisonTest" />
+      <option name="METHOD_NAME" value="actions1Test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSuite.itemOrderingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSuite.actions2test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw13" />
       <extension name="coverage">
         <pattern>
@@ -100,7 +116,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="by.paulent1y" />
       <option name="MAIN_CLASS_NAME" value="by.paulent1y.TestSuite" />
-      <option name="METHOD_NAME" value="itemOrderingTest" />
+      <option name="METHOD_NAME" value="actions2test(int,int)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -140,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestSuite.registrationNormalTest" />
         <item itemvalue="JUnit.TestSuite" />
+        <item itemvalue="JUnit.TestSuite.actions2test" />
+        <item itemvalue="JUnit.TestSuite.actions1Test" />
+        <item itemvalue="JUnit.TestSuite.registrationNormalTest" />
         <item itemvalue="JUnit.TestSuite.loginTest" />
-        <item itemvalue="JUnit.TestSuite.comparisonTest" />
-        <item itemvalue="JUnit.TestSuite.itemOrderingTest" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667258037392</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="f">
+      <created>1667437009293</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667437009293</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -218,7 +241,8 @@
     <MESSAGE value="2 rdy" />
     <MESSAGE value="hw 9 done, two more to go" />
     <MESSAGE value="fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
+    <MESSAGE value="f" />
+    <option name="LAST_COMMIT_MESSAGE" value="f" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

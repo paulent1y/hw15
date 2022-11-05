@@ -2,6 +2,8 @@ package by.paulent1y.pages;
 
 
 import by.paulent1y.utility.Util;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import static by.paulent1y.utility.WebPageActions.*;
@@ -25,6 +27,8 @@ public class LoginPage {
         openUrl(url);
     }
 
+    @Step("Entering mail and password to login form")
+    @Description("Login and password came from src/test/resources/creds.txt")
     public void fillAndSubmit(){
         clickElement(loginButton);
         typeToElement(mailTextField, mail);
@@ -32,6 +36,7 @@ public class LoginPage {
         clickElement(submitLoginButton);
     }
 
+    @Step("Checking if login was successful")
     public boolean isLogged(){
         return elementExists(logoutButton);
     }

@@ -7,7 +7,7 @@ import by.paulent1y.pages.LoginPage;
 import by.paulent1y.pages.OrderingPage;
 import by.paulent1y.pages.RegistrationPage;
 
-import io.qameta.allure.Step;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -25,7 +25,7 @@ public class TestSuite {
 
     @DisplayName("Normal registration test")
     @Test
-    @Step
+    @Description("Test for registration with randomly generated mail and password")
     public void registrationNormalTest(){
         RegistrationPage page = new RegistrationPage();
         page.fillData();
@@ -35,6 +35,7 @@ public class TestSuite {
 
     @DisplayName("Product comparison test")
     @RepeatedTest(1)
+    @Description("Test for comparing two phone models")
     public void comparisonTest(){
         ComparisonPage page = new ComparisonPage();
         page.addToComparison();
@@ -46,6 +47,7 @@ public class TestSuite {
 
     @DisplayName("Product ordering")
     @Test
+    @Description("Ordering a t-shirt wit entering shipping adress")
     public void itemOrderingTest(){
         OrderingPage page = new OrderingPage();
         page.clickRandomItem();
@@ -58,6 +60,7 @@ public class TestSuite {
 
     @DisplayName("Normal login test")
     @Test
+    @Description("Login test with credentials from previous registrations")
     public void loginTest(){
         LoginPage page = new LoginPage();
         page.fillAndSubmit();
@@ -66,6 +69,7 @@ public class TestSuite {
 
     @DisplayName("Drag&Drop test")
     @Test
+    @Description("Simple test for drag&drop action")
     public void actions1Test(){
         DragAndDropPage page = new DragAndDropPage();
         page.dragToDropSpot();
@@ -73,11 +77,12 @@ public class TestSuite {
     }
 
     @DisplayName("Click&Hold test")
+    @Description("Simple test for clicking and holding element for its resizing")
     @ParameterizedTest
     @CsvSource({"50,50", "100,250", "300,0", "0,200"})
     public void actions2test(int xOffset, int yOffset){
         ResizePage page = new ResizePage();
-        page.resizeElemement(xOffset, yOffset);
+        page.resizeElement(xOffset, yOffset);
         Assertions.assertEquals(page.getElementWidth(),Integer.toString(150+xOffset)+"px");
         Assertions.assertEquals(page.getElementHeight(),Integer.toString(150+yOffset)+"px");
     }

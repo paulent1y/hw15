@@ -2,12 +2,13 @@ package by.paulent1y.pages.DemoWebsite;
 
 import by.paulent1y.utility.Driver;
 import by.paulent1y.utility.WebPageActions;
-import org.openqa.selenium.By;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static by.paulent1y.utility.WebPageActions.waitForElement;
 import static by.paulent1y.utility.WebPageActions.waitForElement;
 
 public class ResizePage {
@@ -23,8 +24,8 @@ public class ResizePage {
         WebPageActions.openUrl(url);
         PageFactory.initElements(Driver.getDriver(), this);
     }
-
-    public void resizeElemement(int x, int y){
+    @Step("Resizing element with {x} as x and {y} as y")
+    public void resizeElement(int x, int y){
         Driver.getDriver().switchTo().frame(frame1);
         Actions builder = new Actions(Driver.getDriver());
         builder.
@@ -33,11 +34,11 @@ public class ResizePage {
                 release().
                 perform();
     }
-
+    @Step("Getting element width")
     public String getElementWidth(){
         return resizableElement.getCssValue("width");
     }
-
+    @Step("Getting element height")
     public String getElementHeight(){
         return resizableElement.getCssValue("height");
     }

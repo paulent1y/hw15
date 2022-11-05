@@ -3,6 +3,10 @@ package by.paulent1y.pages;
 import by.paulent1y.utility.Driver;
 import by.paulent1y.utility.Util;
 import by.paulent1y.utility.WebPageActions;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -42,15 +46,19 @@ public class OrderingPage {
         WebPageActions.openUrl(url);
     }
 
+    @Step("Clicking \"place order\"")
     public void confirmOrder(){
         waitForHide(loaderImg2);
         clickElement(placeOrderButton);
     }
 
+    @Step("Checking if item was ordered successful by checking element presence")
+    @Severity(SeverityLevel.CRITICAL)
     public boolean isOrderedSuccessful(){
         return elementExists(successElement);
     }
-
+    @Step("Filling fields with data")
+    @Description("Data is filled with randomly generated email and some predefined person data")
     public void fillOrderingData() {
         waitForHide(loaderImg1);
         selectValueFrom(countrySelectField, "US");
@@ -66,16 +74,20 @@ public class OrderingPage {
         clickElement(shippingMethodButton);
     }
 
+    @Step("clicking item")
+    @Description ("Item is choosen randomly from all items on a page")
     public void clickRandomItem() {
         List<WebElement> products = Driver.getDriver().findElements(productItem);
         products.get(new Random().nextInt(products.size())).click();
     }
 
+    @Step("Choosing options for item")
     public void chooseOptions() {
         clickElement(sizeButton);
         clickElement(colorButton);
     }
 
+    @Step("Adding item to cart and proceeding")
     public void addToCartAndProceed() {
         clickElement(addToCartButton);
         clickElement(goToCartButton);

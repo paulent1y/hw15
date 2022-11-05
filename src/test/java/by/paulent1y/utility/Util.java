@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Util {
+    private static final String credsFile = "src/test/resources/creds.txt";
 
     public static String generatePassword() {
         Random r = new Random();
@@ -25,7 +26,7 @@ public class Util {
     }
 
     public static void saveCredsToFile(String mail, String password) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("creds.txt", true))){
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(credsFile, true))){
             bw.append(mail).append(",").append(password).append("\n");
         }
         catch (Exception e) {
@@ -33,7 +34,7 @@ public class Util {
         }
     }
     public static String getCredsFromFile() {
-        return getCredsFromFile("creds.txt");
+        return getCredsFromFile(credsFile);
     }
 
     public static String getCredsFromFile(String filename) {

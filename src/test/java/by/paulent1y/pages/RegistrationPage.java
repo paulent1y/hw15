@@ -1,6 +1,8 @@
 package by.paulent1y.pages;
 
 import by.paulent1y.utility.Util;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import static by.paulent1y.utility.WebPageActions.*;
 public class RegistrationPage {
@@ -22,7 +24,8 @@ public class RegistrationPage {
     private final By registerButton = By.xpath("//*[@id=\"registerButton\"]");
     private final By logoutButton = By.xpath("//*[@class=\"c-header__profile_link c-header__profile-logout\"]");
 
-
+    @Step("Filling data for registration")
+    @Description("Email and password are generated automatically")
     public void fillData(){
         selectValueFrom(countrySelectField, "176");
         typeToElement(emailTextField, mail);
@@ -35,12 +38,13 @@ public class RegistrationPage {
         typeToElement(adressTextField, "Baker St. 221b");
 
     }
-
+    @Step("Submitting registration")
     public void submitRegistration(){
         clickElement(privacyCheckBox);
         clickElement(registerButton);
     }
-
+    @Step("Checking if registration was successful")
+    @Description("If it is successful - password and email are being saved to src/test/resources/creds.txt")
     public boolean isRegistrationSuccessful(){
         if (!elementExists(logoutButton))
             return false;

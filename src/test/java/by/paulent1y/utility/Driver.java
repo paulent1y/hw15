@@ -1,5 +1,6 @@
 package by.paulent1y.utility;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -9,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Driver {
 
     private static WebDriver driver;
+
 
     public static void init() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");

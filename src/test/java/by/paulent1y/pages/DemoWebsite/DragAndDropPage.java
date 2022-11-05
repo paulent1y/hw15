@@ -2,6 +2,7 @@ package by.paulent1y.pages.DemoWebsite;
 
 import by.paulent1y.utility.Driver;
 import by.paulent1y.utility.WebPageActions;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -23,14 +24,14 @@ public class DragAndDropPage {
         WebPageActions.openUrl(url);
         PageFactory.initElements(Driver.getDriver(), this);
     }
-
+    @Step("Dragging element to drop spot")
     public void dragToDropSpot(){
         Driver.getDriver().switchTo().frame(frame1);
         Actions builder = new Actions(Driver.getDriver());
         builder.dragAndDrop(draggable, droppable).
                 perform();
     }
-
+    @Step("Checking if element is successfully dragged")
     public String getDroppableText(){
         return droppable.getText();
     }
